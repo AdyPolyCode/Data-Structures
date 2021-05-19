@@ -1,7 +1,7 @@
 class Node:
     def __init__(self, value):
         '''
-        Node class creater method
+        Node class creator method
         input value is needed to store a value in it, respectively create a Node
         '''
         self.value = value
