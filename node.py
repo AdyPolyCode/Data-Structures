@@ -1,7 +1,7 @@
 class Node:
     def __init__(self, value):
         '''
-        Node class creator method
+        Node class creater method
         input value is needed to store a value in it, respectively create a Node
         '''
         self.value = value
@@ -19,13 +19,10 @@ class Node:
         '''
         Calling the next node value
         
-        ### ### ### ### ###
         obj1 = Node(value)
         obj2 = Node(value)
 
         obj1.setNextValue(obj2)
-        ### ### ### ### ###
-
         # obj1.getNextValue() -> obj2
         '''
         return self.nextValue
