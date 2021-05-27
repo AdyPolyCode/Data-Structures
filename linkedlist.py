@@ -119,3 +119,46 @@ class LinkedList:
         temp = nodeOne.getNextValue()
         nodeOne.setNextValue(nodeTwo.getNextValue())
         nodeTwo.setNextValue(temp)
+    
+
+    def n_th_last(self, n):
+        '''
+        n-parameter (has to be an int:) is required, if not an exception is raised
+        The returned value will be the n-th last element from the list
+        if the list is empty None will be returned
+        '''
+
+        if isinstance(n, int):
+            tail = self.getHead()
+            wanted = None
+            pointer = 1
+
+            while tail:
+                tail = tail.getNextValue()
+                pointer += 1
+
+                if pointer >= n + 1:
+                    if wanted is None:
+                        wanted = self.getHead()
+                    else:
+                        wanted = wanted.getNextValue()
+            return wanted
+        else:
+            raise ValueError(f'Given value "{n}" is a type of "{type(n).__name__}". Integer expected but "{type(n).__name__}" given.')
+    
+    
+    def get_middle(self):
+        '''
+        The returned value will be the middle element in the list
+        if the list is empty None will be returned
+        '''
+        slow = self.getHead()
+        fast = self.getHead()
+
+        while fast:
+            fast = fast.getNextValue()
+
+            if fast:
+                fast = fast.getNextValue()
+                slow = slow.getNextValue()
+        return slow
